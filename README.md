@@ -1,3 +1,5 @@
+npx create-next-app project-name -e https://github.com/diogomfc/next-base-template-v1
+
 ```bash
    INSTALL ESLINT
    npx eslint --init
