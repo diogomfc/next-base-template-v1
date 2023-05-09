@@ -1,34 +1,87 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+   INSTALL ESLINT
+   npx eslint --init
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+  INSTALL PRETTIER
+  Prettier - https://prettier.io/docs/en/install.html
+  
+   pnpm install --save-dev --save-exact prettier
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   create .prettierrc.json in root directory
+    add in .prettierrc.json
+      {
+      "traillingComma": "none",
+      "semi": true,
+      "singleQuote": true
+      }
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+  INSTALL PLUGIN
+  ---
+  eslint-plugin-react-hooks - https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks
+  pnpm install eslint-plugin-react-hooks --save-dev
+  
+  add in .eslintrc.json
 
-## Learn More
+  {
+  "plugins": [
+    // ...
+    "react-hooks"
+  ],
+  "rules": {
+    // ...
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  }
+  }
+  ----
+  eslint-config-prettier - https://github.com/prettier/eslint-config-prettier#installation
+  pnpm install --save-dev eslint-config-prettier
 
-To learn more about Next.js, take a look at the following resources:
+  add in .eslintrc.json
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  {
+  "extends": [
+    "prettier"
+  ]
+  }
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  ----
+  eslint-plugin-prettier - https://github.com/prettier/eslint-plugin-prettier
+  pnpm install --save-dev eslint-plugin-prettier
 
-## Deploy on Vercel
+  add in .eslintrc.json
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  {
+    "rules": {
+    "prettier/prettier": "error"
+     }
+  }
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  ----
+  eslint-plugin-import-helpers - https://github.com/Tibfib/eslint-plugin-import-helpers/tree/master
+  pnpm install eslint-plugin-import-helpers --save-dev
+
+  add in .eslintrc.json
+
+    plugins: ['eslint-plugin-import-helpers'],
+    rules: {
+        'import-helpers/order-imports': [
+            'warn',
+            { // example configuration
+                newlinesBetween: 'always',
+                groups: [
+                    'module',
+                    '/^@shared/',
+                    ['parent', 'sibling', 'index'],
+                ],
+                alphabetize: { order: 'asc', ignoreCase: true },
+            },
+        ],
+    }
+}
+
+```
